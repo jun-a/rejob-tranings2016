@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+　<title>CSS | レイアウトの配置</title>
+　　<style>
+#header
+{
+  width:480px;
+   height:74px;
+   background-color:pink;
+
+}
+#footer{
+   width:480px;
+   height:100px;
+   background-color:pink;
+   clear:both;
+}
+  </style>
+    </head>
+    <body>
+  <div color="white" id="header">Admin</div>
+  <h1>案件一覧</h1>
+
+     </div>
+   案件は<%= @jobs.count %>件です<br>
+
+ <div>
+ <table border=1 >
+ <tr>
+  <td>都道府県</td>
+  <td>タイトル</td>
+  <td>詳細</td>
+  <<td>edit</td>>
+ </tr>
+     <% @jobs.each do |job| %>
+ <tr>
+   <td style="width:50px"><%= job.name%></td>
+   <td><%= job.title %></td>
+   <td><%= job.description %></td>
+      <% end %>
+   <% Area.all.each do |city| %>
+   <td><a href="edit"><%= city.city %>><%= city.city %>edit </a></td>
+   <% end %>
+
+
+</tr>
+</div>
+</table>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+module NeweditHelper
+end
