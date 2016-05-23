@@ -42,15 +42,16 @@
 <% @jobs.each do |job| %>
   <tr>
     <td style="width:100px"><%= job.name%></td>
-    <td><a href="/job?id=<%= job.title %>>"><%= job.title %></a></td>
+    <td><a href="/job?id=<%= job.title %>"><%= job.title %></a></td>
     <td><%= job.description %></td>
-    <td><a href="/edit?id=<%= job.id %>>">edit</a></td>
+    <td><a href="/edit?id=<%= job.id %>">edit</a></td>
   </tr>
 <% end %>
 
 
-<form  action="admin" method="get">
-</form>
+<form  action="admin" method="get"></form>
+
+
 
 
 </div>

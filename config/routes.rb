@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'edit_th/do'
+
+  get 'newregist/do'
+
   get 'newedit/do'
 
   get 'edit/do'
@@ -44,6 +48,8 @@ get 'complete' => 'complete#do'
 post 'samplepage' => 'samplepage#do'
 get 'edit' => 'edit#do'
 get 'newedit' => 'newedit#do'
+get 'newregist' => 'newregist#do'
+post 'edit_th' => 'edit_th#update'
 
 
 

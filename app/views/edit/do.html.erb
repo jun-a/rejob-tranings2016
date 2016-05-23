@@ -10,38 +10,24 @@
 <a href="admin">(Adminに戻る)</a>
 </div>
 
+<h1>編集ページ</h1>
+<form action="edit_th" method="post">
+    <input name="authenticity_token" type="hidden" value="1234" />
+        都道府県<br><select name="name">
+        <% Area.all.each do |city| %>
+        <option value=<%= city.city %>><%= city.city %><br></option>
+        <% end %>
+      　</select><br><br>
 
+        タイトル<br><input type="text" name="title" size="40">　<br><br>
+        説明文　<br><input type="text" name="description" size="80">  <br>
+        <br>
+<div align=center>
+      <button  type="submit" name="edit"> 編集 </button>
+        <br>
 
-
-            <h1>編集ページ</h1>
-
-            <form action="admin" method="post">
-              <input name="authenticity_token" type="hidden" value="1234" />
-                    タイトル <input type="text" name="title" size="40">　<br><br>
-                    説明文　<input type="text" name="descrition" size="80">  <br><br>
-                  
-
-                    <tr>
-                        <select name="city">
-                      <% Area.all.each do |city| %>
-                      <option value=<%= city.city %>><%= city.city %><br></option>
-                      <% end %>
-                        </select>
-<br>
-                    </tr>
-                    <div align=center>
-                        <form action="admin" method="edit">
-                    <a href="admin">
-                    <button  size ="40" type="submit" name="job">編集</button>
-                    </form>
-
-
-                    <form action="admin" method="delete">
-                    <button  type="delete" name="delete">削除</button>
-                      </form>
-                  </div>
-            </form>
-
-
+      <button type="delete"  name="delete">削除</button>
+    </form>
+</div>
   </body>
 </html>

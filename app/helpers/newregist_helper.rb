@@ -1,0 +1,2 @@
+module NewregistHelper
+end
