@@ -15,16 +15,18 @@
   <div>
   <h1><font color="339999" size="7">リジョブサイト</font></h1>
 
-      <a href="search">検索ページにいく</a>
+      <a href="search">検索ページにいく</a><br>
+　　　↑都道府県から探せるよ♪
+
+      <br><br>
       <a href="job">案件ページにいく</a>
     </div>
+　　　　↑案件ぺージに進むよ♪
 
-    top画面だよ
 
-     検索文言：
      <%= params[:trend] %>
  <br>
-     結果?
+     
      <% @jobs.each do |job| %>
      <%= job.description %> <br>
      <% end %>

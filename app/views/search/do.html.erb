@@ -17,9 +17,6 @@
     </div>
       <div>
 <h3>都道府県を選んでください</h3>
-
-
-
 <form  action="search" method="get">
     <select name="city">
   <% Area.all.each do |city| %>
@@ -41,17 +38,19 @@
 </div>
 案件は<%= @jobs.count %>件です<br>
 <div>
-  <h1>商品一覧</h1>
+  <h1>案件一覧</h1>
 <table border=1 >
 <tr>
- <td>都道府県</td>
+<td>ID</td>
  <td>タイトル</td>
+ <td style="width:100px">都道府県</td>
  <td>詳細</td>
 </tr>
   <% @jobs.each do |job| %>
   <tr>
-<td style="width:50px"><%= job.name%></td>
-<td><%= job.title %></td>
+<td style="width:50px"><%= job.id %></td>
+<td><a href="/job?id=<%= job.id %>>"><%= job.title %></a></td>
+<td><%= job.name%></td>
 <td><%= job.description %></td>
 <% end %>
 </tr>

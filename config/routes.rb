@@ -41,9 +41,10 @@ get 'mypage' => 'mypage#do'
 get 'admin' => 'admin#do'
 get 'entry' => 'entry#do'
 get 'complete' => 'complete#do'
-get 'samplepage' => 'samplepage#do'
+post 'samplepage' => 'samplepage#do'
 get 'edit' => 'edit#do'
 get 'newedit' => 'newedit#do'
+
 
 
 

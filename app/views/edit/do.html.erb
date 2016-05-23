@@ -1,2 +1,47 @@
-<h1>Edit#do</h1>
-<p>Find me in app/views/edit/do.html.erb</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div align = right>
+  <font color="white">ようこそ、さん</font>
+<a href="admin">(Adminに戻る)</a>
+</div>
+
+
+
+
+            <h1>編集ページ</h1>
+
+            <form action="admin" method="post">
+              <input name="authenticity_token" type="hidden" value="1234" />
+                    タイトル <input type="text" name="title" size="40">　<br><br>
+                    説明文　<input type="text" name="descrition" size="80">  <br><br>
+                  
+
+                    <tr>
+                        <select name="city">
+                      <% Area.all.each do |city| %>
+                      <option value=<%= city.city %>><%= city.city %><br></option>
+                      <% end %>
+                        </select>
+<br>
+                    </tr>
+                    <div align=center>
+                        <form action="admin" method="edit">
+                    <a href="admin">
+                    <button  size ="40" type="submit" name="job">編集</button>
+                    </form>
+
+
+                    <form action="admin" method="delete">
+                    <button  type="delete" name="delete">削除</button>
+                      </form>
+                  </div>
+            </form>
+
+
+  </body>
+</html>
