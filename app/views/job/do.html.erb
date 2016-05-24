@@ -3,43 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>job</title>
-    <base href="job">
   </head>
   <body>
     <div align=right>
     <font color="white">ようこそ、さん</font>
     <a href="top">(TOPに戻る)</a>
     </div>
-
-    <a href="search">求人一覧に飛べるよ</a>
-    <p>タイトル：<%= @job %></p>
-    <p>場所：<%= @area %></p>
-
-    <%= Job.count %>件です
-    <% Job.all.each do |area| %>
-    2016 <br>
-    <%= area.city %>
-    <% end %>
-
-
-
-
-    案件ページだよ
-    <p>タイトル：<%= @job %></p>
-
-    <p>都道府県：<%= @area %></p>
-
-    <p><%= Area.count %>件です</p>
-
-    <% Area.all.each do |area| %>
-    の求人はこちらから！ <br>
-    <%= area.city %>
-      <a href="/job?trend=sakura">hboyリンクですよー</a>
-    <% end %>
-
-
-
-
+<h3>案件詳細ページです。</h3>
 
   </body>
 </html>

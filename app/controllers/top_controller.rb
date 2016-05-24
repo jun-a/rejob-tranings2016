@@ -1,7 +1,9 @@
 class TopController < ApplicationController
   def do
-    #@trend = params[:trend]
-   params[:trend] #sakuraが来ている
-   @jobs = Job.where(name: params[:trend]) #案件名がアルバイト大募集のものを検索
+    @jobs = Job.where(name: params[:city])
+    @area = params[:title]
+    
+   @job_id = params[:id]
+   @job = Job.find_by(id: @job_id)
   end
 end

@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 get 'top' => 'top#do'
-get 'job' => 'job#do'
+get 'job/:id' => 'job#do'
 get 'search' => 'search#do'
 get 'login' => 'login#do'
 get 'mypage' => 'mypage#do'
@@ -48,9 +48,9 @@ get 'complete' => 'complete#do'
 post 'samplepage' => 'samplepage#do'
 get 'edit' => 'edit#do'
 get 'newedit' => 'newedit#do'
-get 'newregist' => 'newregist#do'
+get 'newregist' => 'newregist#create'
 post 'edit_th' => 'edit_th#update'
-
+get 'job_destroy' => 'edit_th#job_destroy'
 
 
 

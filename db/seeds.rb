@@ -76,5 +76,14 @@ Area.create(city:'大分')
 Area.create(city:'宮崎')
 Area.create(city:'鹿児島')
 Area.create(city:'沖縄')
+
+
+
+User.create(name:'黒田',name_kana:'クロダ',age:'24',sex:'男',pass:'223344')
+User.create(name:'野崎',name_kana:'ノザキ',age:'23',sex:'女',pass:'2016')
+# User.create(name:,name_kana:,age:,sex:,pass:)
+# User.create(name:,name_kana:,age:,sex:,pass:)
+# User.create(name:,name_kana:,age:,sex:,pass:)
+
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Top</title>
-    <base href="top">
+
   </head>
 
   <body>
@@ -19,17 +19,29 @@
 　　　↑都道府県から探せるよ♪
 
       <br><br>
-      <a href="job">案件ページにいく</a>
-    </div>
+      <div>
+        <h1>案件一覧</h1>
+      <table border=1 >
+      <tr>
+      <td>ID</td>
+       <td>タイトル</td>
+       <td style="width:100px">都道府県</td>
+       <td>詳細</td>
+      </tr>
+        <% @jobs.all.each do |job| %>
+        <tr>
+      <td style="width:50px"><%= job.id %></td>
+      <td><a href="/job?id=<%= job.id %>"<%= job.title %></a></td>
+      <td><%= job.name%></td>
+      <td><%= job.description %></td>
+      <% end %>
+      </tr>
+      </table>
+      </div>
+
+
 　　　　↑案件ぺージに進むよ♪
 
-
-     <%= params[:trend] %>
- <br>
-     
-     <% @jobs.each do |job| %>
-     <%= job.description %> <br>
-     <% end %>
 
 
 

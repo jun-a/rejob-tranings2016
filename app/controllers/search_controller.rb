@@ -3,5 +3,7 @@ class SearchController < ApplicationController
     @jobs = Job.where(name: params[:city])
     @area = params[:title]
 
+    @job_id = params[:id]
+    @job = Job.find_by(id: @job_id)
   end
 end

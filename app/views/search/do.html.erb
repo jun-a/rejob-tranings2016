@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>search</title>
-    <base href="serach">
   </head>
 
   <body>
@@ -11,10 +10,11 @@
     <font color="white">ようこそ、さん</font>
     <a href="top">(TOPに戻る)</a>
     </div>
-    <div>
-      <a href="job">案件詳細に飛べるよ</a>
-
-    </div>
+    <!-- <div>
+          <!-- <% Job.all.each do |job| %>
+      <a  href="/job?id=<%= job.id %>">案件詳細に飛べるよ<br></a>
+<% end %> -->
+    <!-- </div> -->
       <div>
 <h3>都道府県を選んでください</h3>
 <form  action="search" method="get">
@@ -49,7 +49,7 @@
   <% @jobs.each do |job| %>
   <tr>
 <td style="width:50px"><%= job.id %></td>
-<td><a href="/job?id=<%= job.id %>>"><%= job.title %></a></td>
+<td><a href="/job/<%= job.id %>"><%= job.title %></a></td>
 <td><%= job.name%></td>
 <td><%= job.description %></td>
 <% end %>

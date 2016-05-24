@@ -39,10 +39,11 @@
   <td>詳細</td>
   <td style="width:50px">edit</td>
 </tr>
+
 <% @jobs.each do |job| %>
   <tr>
-    <td style="width:100px"><%= job.name%></td>
-    <td><a href="/job?id=<%= job.title %>"><%= job.title %></a></td>
+    <td style="width:100px"><%= job.name %></td>
+    <td><a href="/job/<%= job.id %>"><%= job.title %></a></td>
     <td><%= job.description %></td>
     <td><a href="/edit?id=<%= job.id %>">edit</a></td>
   </tr>

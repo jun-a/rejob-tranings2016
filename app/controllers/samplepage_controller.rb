@@ -8,8 +8,15 @@ class SamplepageController < ApplicationController
       else
         flash[:notice] = "送信できませんでした"
         redirect_to '/top'
+      end
+    end
 
-end
-end
+def create
+    if @user.save
+          session[:user_id] = user.id
+          redirect_to @user, notice:"ユーザー登録に成功"
+        else
+          render :new
+        end
 
 end
