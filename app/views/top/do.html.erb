@@ -28,19 +28,24 @@
        <td style="width:100px">都道府県</td>
        <td>詳細</td>
       </tr>
-        <% @jobs.all.each do |job| %>
+
+
         <tr>
-      <td style="width:50px"><%= job.id %></td>
-      <td><a href="/job?id=<%= job.id %>"<%= job.title %></a></td>
-      <td><%= job.name%></td>
-      <td><%= job.description %></td>
-      <% end %>
+      <% @jobs.all.each do |job| %>
+      </tr>
+
+      <tr>
+      <td style="width:30px"><%= job.id %></td>
+      <td><a href="/job/=<%= job.id %>"><%= job.title %></td>
+       <td><%= job.name %></td>
+       <td><%= job.description %></td>
+      </tr>
+<% end %>
       </tr>
       </table>
       </div>
 
 
-　　　　↑案件ぺージに進むよ♪
 
 
 

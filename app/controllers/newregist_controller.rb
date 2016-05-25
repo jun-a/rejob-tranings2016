@@ -1,5 +1,5 @@
 class NewregistController < ApplicationController
-  def create
+  def do
 
   end
 end

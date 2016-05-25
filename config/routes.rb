@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'login_id/do'
+
   get 'edit_th/do'
 
   get 'newregist/do'
@@ -48,11 +50,13 @@ get 'complete' => 'complete#do'
 post 'samplepage' => 'samplepage#do'
 get 'edit' => 'edit#do'
 get 'newedit' => 'newedit#do'
-get 'newregist' => 'newregist#create'
+get 'newregist' => 'newregist#do'
 post 'edit_th' => 'edit_th#update'
 get 'job_destroy' => 'edit_th#job_destroy'
+get 'login_id' => 'login_id#do'
+get 'job_apply' => 'job#create'
 
-
+#method名 => comtroller名#アクション名
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
