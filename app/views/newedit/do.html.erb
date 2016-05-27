@@ -1,46 +1,44 @@
   <!DOCTYPE html>
   <html>
     <head>
-      <meta charset="utf-8">
-      <title>
-            </title>
-            　　<style>
-            #header
-            {
-              width:1100px;
-               height:74px;
-               background-color:pink;
-            }
-            </style>
-              </head>
-              <body>
-                <div align = right>
-                <font color="white">ようこそ、さん</font>
-              <a href="admin">(Adminに戻る)</a><br>
-              <a href="top">(リジョブTOP)</a>
-              </div>
+<meta charset="utf-8">
+<title>
+    </title>
+    　　<style>
+    #header
+    {
+      width:1100px;
+       height:74px;
+       background-color:pink;
+    }
+    </style>
+      </head>
+      <body>
+        <div align = right>
+        <font color="white">ようこそ、さん</font>
+      <a href="admin">(Adminに戻る)</a><br>
+      <a href="top">(リジョブTOP)</a>
+      </div>
 
 
-                <div color="pink" id="header"><h1>新規作成ページ</h1></div><br>
+        <div color="pink" id="header"><h1>新規作成ページ</h1></div><br>
 
+    <form action="samplepage" method="post">
+      <input name="authenticity_token" type="hidden" value="1234" />
 
+          都道府県<br><select name="name">
+        <% Area.all.each do |city| %>
+        <option value=<%= city.city %>><%= city.city %><br></option>
+        <% end %>
+      </select><br><br>
 
-                        <form action="samplepage" method="post">
-                          <input name="authenticity_token" type="hidden" value="1234" />
+            タイトル<br> <input type="text" name="title" size="40">　<br><br>
+            説明文　<br><input type="text" name="description" size="80">  <br><br>
 
-                              都道府県<br><select name="name">
-                            <% Area.all.each do |city| %>
-                            <option value=<%= city.city %>><%= city.city %><br></option>
-                            <% end %>
-                          </select><br><br>
+            <div align=center>
 
-                                タイトル<br> <input type="text" name="title" size="40">　<br><br>
-                                説明文　<br><input type="text" name="description" size="80">  <br><br>
-
-                                <div align=center>
-
-                                <button type="submit" name="job">新規作成</button>
-                                </div>
-                        </form>
+            <button type="submit" name="job">新規作成</button>
+            </div>
+    </form>
     </body>
   </html>

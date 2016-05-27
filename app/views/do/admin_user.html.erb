@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Admin_user</title>
+    　　<style>
+    #header
+    {
+      width:1100px;
+       height:74px;
+       background-color:pink;
+
+    }
+    #footer{
+       width:700px;
+       height:100px;
+       background-color:pink;
+       clear:both;
+    }
+      </style>
+        </head>
+        <body>
+          <div align = right>
+          <font color="white">ようこそ、さん</font>
+        <a href="top">(リジョブTOP)</a>
+      </div>
+          <br>
+      <div color="white" id="header"><h1>user管理</h1></div><br>
+      <h2>user一覧</h2>
+         </div>
+          案件は<%= @jobs.count %>件です
+          <div align=right>
+          <font color="white">ようこそ、さん</font>
+          <a href="newedit">(新規作成)</div></a>
+
+     <table border=1 >
+    <tr>
+      <td>名前</td>
+      <td>カナ</td>
+      <td>性別</td>
+      <td>年齢</td>
+      <td style="width:50px">edit</td>
+    　<td>応募数</td>
+    </tr>
+
+    <% User.all.each do |user| %>
+      <tr>
+        <td style="width:100px"><%= user.name %></td>
+        <td><a href="/mypage?id<%= user.id %>"><%= user.name_kana %></a></td>
+        <td><%= user.sex %></td>
+        <td><%= user.age %></td>
+        <td><a href="/maypage?id=<%= user.id %>">edit</a></td>
+        <td><%= JobsUser.where(user_id: user.id).count %><br></td>
+      </tr>
+    <% end %>
+
+
+    <form  action="admin" method="get"></form>
+
+
+
+
+    </div>
+  </body>
+</html>

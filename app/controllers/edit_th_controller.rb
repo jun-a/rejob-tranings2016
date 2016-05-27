@@ -22,5 +22,18 @@ class EditThController < ApplicationController
    Job.find_by(id: params[:id]).destroy
    redirect_to '/admin'
  end
-end
+
 #パラムスidはURLで作る
+
+  def user_edit
+    @user_id = params[:id]
+    @edit = User.find_by(id: @user_id)
+    if @edit.update(name: params[:name],name_kana: params[:name_kana], age: params[:age],sex: params[:sex])
+      flash[:notice] = "送信完了"
+      redirect_to '/admin'
+    else
+      flash[:notice] = "送信できませんでした"
+      redirect_to '/top'
+    end
+  end
+end

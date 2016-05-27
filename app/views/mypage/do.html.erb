@@ -5,19 +5,31 @@
     <title>mypage</title>
   </head>
   <body>
+    <div align = right>
+
+      ようこそ<a><%= @current_user %></a><br>
+     <a href="admin">(Adminトップ)</a>
+</div>
     <div>
       <font color="3333999" size="6">マイページ </font>
     </div>
 
     <table border=1>
         <tr>
+応募数
+  <%= @jobap.count %>
+社<br>
+  <%= @jobap.pluck(:id) %>
 
-        <td>ID</td>
-	<td>会社名</td>
-	<td>日付</td>
+  <td>ID</td>
 
+<td>会社名</td>
 
-
+<td>日付</td>
+</tr>
       </table>
+
+
+
   </body>
 </html>

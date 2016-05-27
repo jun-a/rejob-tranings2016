@@ -3,20 +3,21 @@ class JobController < ApplicationController
 
    @job = Job.first.description
     @area = Area.first.city
+    @jobs = User.find_by(id: params[:id])
+  @JOB = params[:id]
+  end
 
+      def create
+         if session[:user_id].present?
+    JobsUser.create(job_id: params[:job_id], user_id: session[:user_id])
 
-         end
-    def create
-      @job_id = params[:id]
-      @jobs = Job.find_by(id: @job_id)
-        if @jobs.create(name: params[:name],title: params[:title], description: params[:description])
-          flash[:notice] = "送信完了"
-          redirect_to '/admin'
+          flash[:success] = "応募が完了しました!"
+          redirect_to "/mypage?id=#{session[:user_id]}"
         else
-          flash[:notice] = "送信できませんでした"
-          redirect_to '/top'
-      end
+          flash[:danger] = 'ログインしてください'
+          redirect_to "/login/mypage"
     # @job_id = params[:id]
     # @job = Job.find_by(id: @job_id)
   end
+end
 end

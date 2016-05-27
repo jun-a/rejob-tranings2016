@@ -79,8 +79,16 @@ Area.create(city:'沖縄')
 
 
 
-User.create(name:'黒田',name_kana:'クロダ',age:'24',sex:'男',pass:'223344')
-User.create(name:'野崎',name_kana:'ノザキ',age:'23',sex:'女',pass:'2016')
+User.create(name:'黒田',name_kana:'クロダ',age:'24',sex:'男',pass: '223344')
+User.create(name:'野崎',name_kana:'ノザキ',age:'23',sex:'女',pass: 2016)
+
+
+
+JobsUser.create(user_id: 1, job_id: 1)
+JobsUser.create(user_id: 2, job_id: 2)
+JobsUser.create(user_id: 3, job_id: 3)
+JobsUser.create(user_id: 4, job_id: 4)
+
 # User.create(name:,name_kana:,age:,sex:,pass:)
 # User.create(name:,name_kana:,age:,sex:,pass:)
 # User.create(name:,name_kana:,age:,sex:,pass:)

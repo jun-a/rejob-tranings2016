@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div align = right>
+    <font color="white">ようこそ、さん</font>
+    <a href="admin">(Adminに戻る)</a>
+    </div>
+
+    <h1>編集ページ</h1>
+    <form action="user_edit?id=<%= @edit.id %>" method="post">
+    <input name="authenticity_token" type="hidden" value="1234" />
+        ・名前<br><input type="text" name="name" value=<%= @edit.name %> size="40">　<br><br>
+        ・カナ<br><input type="text" name="name_kana" value=<%= @edit.name_kana %> size="40">　<br><br>
+        ・年齢<br><input type="text" name="age" value=<%= @edit.age %> size="40">　<br><br>
+        ・性別<br>男性<input type="radio" name="sex" value=<%= @edit.sex %>　size="40">　<br><br>
+        　　<br>女性<input type="radio" name="sex" value=<%= @edit.sex %> 　size="40">　<br><br>
+
+    <div align=center>
+      <button  type="submit" name="edit"> 編集 </button>　
+        <br>
+    </form>
+    <a href="job_destroy?id=<%= @edit.id %>">削除</a>
+    </div>
+
+  </body>
+</html>

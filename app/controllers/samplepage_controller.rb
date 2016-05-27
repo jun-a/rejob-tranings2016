@@ -1,6 +1,5 @@
 class SamplepageController < ApplicationController
-  def do
-  end
+
   def do
       if Job.create(name: params[:name],title: params[:title], description: params[:description])
         flash[:notice] = "送信完了"
@@ -11,13 +10,13 @@ class SamplepageController < ApplicationController
     end
   end
 
-    def do
-    @User = User.find_by(id: session[:id])
-    if @User.authenticate(name: params[:name], pass: params[:pass])
-          session[:id] = user.id
-          redirect_to '/login'
-        else
-          render :new
-        end
+    def regist
+      if User.create(name: params[:name],name_kana: params[:name_kana], age: params[:age],sex: params[:sex], pass: params[:pass], pass2: params[:pass2])
+        flash[:notice] = "登録完了しました"
+        redirect_to '/admin_user'
+      else
+        flash[:notice] = "送信できませんでした"
+        redirect_to '/newregist'
+      end
     end
 end

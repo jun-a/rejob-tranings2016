@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'user_edit/do'
+
+  get 'admin_user/do'
+
   get 'login_id/do'
 
   get 'edit_th/do'
@@ -50,11 +54,13 @@ get 'complete' => 'complete#do'
 post 'samplepage' => 'samplepage#do'
 get 'edit' => 'edit#do'
 get 'newedit' => 'newedit#do'
-get 'newregist' => 'newregist#do'
+get 'newregist' => 'newregist#regist'
 post 'edit_th' => 'edit_th#update'
 get 'job_destroy' => 'edit_th#job_destroy'
 get 'login_id' => 'login_id#do'
-get 'job_apply' => 'job#create'
+get 'jobap' => 'job#create'
+get 'admin_user' => 'admin_user#do'
+get 'user_edit' => 'user_edit#user_edit'
 
 #method名 => comtroller名#アクション名
 
