@@ -13,7 +13,7 @@ class SamplepageController < ApplicationController
     def regist
       if User.create(name: params[:name],name_kana: params[:name_kana], age: params[:age],sex: params[:sex], pass: params[:pass], pass2: params[:pass2])
         flash[:notice] = "登録完了しました"
-        redirect_to '/admin_user'
+        redirect_to '/login'
       else
         flash[:notice] = "送信できませんでした"
         redirect_to '/newregist'

@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+.header-top{height:30px;background:#f08f9b;border-top:2px solid #ed7987}
+
+
+
+.table_row [class*='cols_']{display:table-cell;vertical-align:middle}
+{width:980px}.row [class^="cols_"]{box-sizing:border-box}
+.cols_12{width:100%}.cols_11{width:91.66666667%}
+.cols_10{width:83.33333333%}
+.cols_9{width:75%}
+.cols_8{width:66.66666667%}
+.cols_7{width:58.33333333%}
+.cols_6{width:50%}
+.cols_5{width:41.66666667%}
+.cols_4{width:33.33333333%}
+.cols_3{width:25%}
+.cols_2{width:16.66666667%}
+.cols_1{width:8.33333333%}
+.cols_fix_100{width:100px}
+.t_center{text-align:center

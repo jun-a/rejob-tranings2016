@@ -1,5 +1,7 @@
 Job.all.destroy_all
 Area.all.destroy_all
+User.all.destroy_all
+JobsUser.all.destroy_all
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
