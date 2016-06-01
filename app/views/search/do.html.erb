@@ -15,53 +15,155 @@
       <a  href="/job?id=<%= job.id %>">案件詳細に飛べるよ<br></a>
 <% end %> -->
     <!-- </div> -->
-      <div>
-<h3>都道府県を選んでください</h3>
-<form  action="search" method="get">
-    <select name="city">
-  <% Area.all.each do |city| %>
-  <!-- オブジェクト.each do |変数| -->
-  <!-- <a href="/search?area= -->
-  <option value=<%= city.city %>><%= city.city %><br></option>
-  <% end %>
+    <div class="quick_search txt_size_12">
+      <div class="content">
+          <div class="quick_search__inner img_quick_search">
+            <div class="row row-mg">
+              <div class="cols_2 quick_search__inner__icon" hidden=""><input name="q[business_type][]" type="checkbox" value="esthe" checked="checked" id="q_business_type"></div>
+              <div class="cols_2 quick_search__inner__icon">
+                <form  action="search" method="get">
+                <select class="w-block" name="city" id="q_pref">
+                  <option selected>都道府県を検索</option>
+                  <% Area.all.each do |city| %><option value=<%= city.city %>><%= city.city %></option>
+                <% end %>
+                </select></div>
+                  <button name="button" type="search" class="btn btn--pt3 btn--xsmall w-100px">カンタン検索</button>
+                </form>
+                <div>
+              </div>
+            </div>
+          </div>
+      </div>
 
-</select>
-<button type="search" name="button" >検索</button>
-</form>
-<!-- <%= @jobs.count %>件です<br>
-  <% @jobs.each do |job| %>
-  <%= job.title %>』<br>
-  <%= job.description %><br><br>
-  <% end %>
-
-</div> <-->
-</div>
 案件は<%= @jobs.count %>件です<br>
 <div>
-  <h1>案件一覧</h1>
-<table border=1 >
-<tr>
-<td>ID</td>
- <td>タイトル</td>
- <td style="width:100px">都道府県</td>
- <td>詳細</td>
-</tr>
+<h1>案件一覧</h1>
+
+<% @jobs.each do |job| %>
+    <section class="search-job-box">
+        <div class="search-job-box__header table_row">
+          <div class="cols_8">
+            <span class="search-job-box__header__corp">
+              <a href="/job/<%= job.id %>"><%= job.title %></a></td>
+            </span>
+            <h2 class="search-job-box__header__title">
+              <a href="/job/<%= job.id %>"><%= job.name %></a></td></a>
+            </h2>
+          </div>
+          <div class="cols_4 v_bottom">
+            <span class="ml_1 f_right label__oiwai label__oiwai--5000"></span>
+            <ul class="f_right ul-inline ul-inline--lr1">
+                <li class="label__employment">正</li>
+            </ul>
+            <div class="label__search-job-box">
+            </div>
+          </div>
+        </div>
+
+        <div class="search-job-box__subheader">
+          <ul class="ul-inline ul-inline--mb_5-3">
+            <li class="label label--pt6">正社員</li>
+            <li class="label label--pt6">完全個室</li>
+            <li class="label label--pt6">ノルマなし</li>
+            <li class="label label--pt6">急募</li>
+            <li class="label label--pt6">週4回</li>
+            <li class="label label--pt6">制服あり</li>
+            <li class="label label--pt6">店長経験あり</li>
+            <li class="label label--pt6">シフト制</li>
+            <li class="label label--pt6">未経験歓迎</li>
+            <li class="label label--pt6">研修制度あり</li>
+            <li class="label label--pt6">ボーナス・賞与あり</li>
+          </ul>
+        </div>
+
+        <div class="search-job-box__content">
+          <div class="pct">
+            <a href="/job/B8740078">
+              <figure>
+                  <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS7x7meZBE_jxmg1MEG5qPS4t2ZYlGSkLg2_SV9z9Hk-ZlRVxF8cA">
+              </figure>
+            </a>
+          </div>
+          <div class="info">
+              <p class="mb_15">
+                サロンも広く、ゆったりとした空間でお仕事できます。
+    スタッフ間の仲も良く、楽しくお仕事が出来ますし、お客様とのコミュニケーションも
+    とても取れるサロンです。
+
+              </p>
+            <dl class="list-dl-pt3 list-dl-pt3--dt5em txt_size_12">
+                <dt><strong>応募資格</strong></dt>
+                <dd>未経験者でもOKです。　研修・資格取得制度もありますので、自分自身の成長にもなります。
+    </dd>
+              <dt><strong>給与</strong></dt>
+              <dd>
+                <ul class="ul-inline ul-inline--col2">
+                      <li>
+                        【正社員】
+    月給 250,000円以上
+
+                      </li>
+                      <li>
+                        【正社員】
+    月給 175,000円以上
+
+                      </li>
+
+
+                </ul>
+              </dd>
+              <dt><strong>勤務地</strong></dt>
+              <dd>
+                福井県 福井市 高柳1-1007 プラザ高柳101
+                  ( 最寄駅：越前開発駅 )
+
+                  <br>
 
 
 
+              </dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="search-job-box__footer">
+            <div class="table_row">
+              <div class="cols_5">
+                <div class="info-box--tell">
+                  <span class="txt_size_12">TEL応募：</span><span class="txt_size_18 rj_typo_color-c">0120-954-077</span><br>
+                  <span class="txt_size_12">求人番号：B8740078</span>　<span class="txt_size_10">求人番号をお控え下さい。</span>
+                </div>
+              </div>
+              <div class="cols_7 t_right txt_size_16">
+                <div class="js_bookmark_area">
+
+      <form class="js_add_bookmark_form" action="/job_keep" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="5vjFV7DrK5UPUxP9+pXCkY4+/CTdsU23R8z0GhdJ4m16aJYVqtvVKxFrer3+/jBQi2aEDTyuXt+b177kEmTn3g==">
+        <input type="hidden" name="job[code]" value="B8740078">
+    </form>
+      <form class="js_remove_bookmark_form" action="/job_keep" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="delete"><input type="hidden" name="authenticity_token" value="5vjFV7DrK5UPUxP9+pXCkY4+/CTdsU23R8z0GhdJ4m16aJYVqtvVKxFrer3+/jBQi2aEDTyuXt+b177kEmTn3g==">
+        <input type="hidden" name="job[code]" value="B8740078">
+    </form>
+                  <a href="javascript:void(0)" class="btn btn--entry01 w-140px" data-bookmark-status="1"><i class="icon-attach"></i>キープする </a>
+                <a href="/job/B8740078" class="btn btn--entry01 w-140px">詳細を見る</a>
+                  <a href="/entry/B8740078" class="btn btn--entry01 btn--pt3 btn--kantan w-240px" rel="nofollow"> WEB応募する </a>
+                </div>
+              </div>
+            </div>
 
 
-  <% @jobs.each do |job| %>
-  <tr>
-<td style="width:50px"><%= job.id %></td>
-<td><a href="/job/<%= job.id %>"><%= job.title %></a></td>
-<td><%= job.name%></td>
-<td><%= job.description %></td>
-<% end %>
-</tr>
-</table>
-</div>
-
-
+        <div class="txt_size_10 mt_10">
+          <ul class="ul-inline ul-inline--cut">
+            <li>関連キーワード</li>
+                <li><a href="/esthe/area/fukui/city/18201">福井市 エステ 求人</a></li>
+                <li><a href="/esthe/line/99419">えちぜん鉄道勝山永平寺線 エステ 求人</a></li>
+                <li><a href="/esthe/station/9941904">越前開発駅 エステ 求人</a></li>
+                <li><a href="/esthe/feature/employment/regular-member">正社員 エステ 求人</a></li>
+                <li><a href="/esthe/feature/experience/inexperienced">未経験歓迎 エステ 求人</a></li>
+              </ul>
+          </div>
+          <% end %>
+      </div>
+    </div>
+  </section>
   </body>
 </html>

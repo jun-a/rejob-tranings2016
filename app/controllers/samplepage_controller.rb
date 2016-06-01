@@ -19,4 +19,8 @@ class SamplepageController < ApplicationController
         redirect_to '/newregist'
       end
     end
+    def logout
+      session.delete(:user_id)
+      @current_user = nil
+    end
 end

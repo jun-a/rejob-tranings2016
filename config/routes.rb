@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'logout/logout'
+
   get 'user_th/update'
 
   get 'user_edit/do'
@@ -51,7 +53,7 @@ get 'search' => 'search#do'
 get 'login' => 'login#do'
 get 'mypage' => 'mypage#do'
 get 'admin' => 'admin#do'
-get 'entry' => 'entry#do'
+get 'entry' => 'entry#entry'
 get 'complete' => 'complete#do'
 post 'samplepage' => 'samplepage#do'
 get 'edit' => 'edit#do'
@@ -67,6 +69,7 @@ get 'admin_user_user' => 'admin_user#do'
 post 'user_edit' => 'user_th#update'
 post 'user_th' => 'user_th#update'
 get 'user_destroy' => 'user_th#user_destroy'
+get 'logout' => 'logout#logout'
 
 #URL名 => comtroller名#アクション名
 

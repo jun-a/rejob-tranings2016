@@ -5,31 +5,35 @@
     <title>Top</title>
 
   </head>
-
   <body>
+    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS7x7meZBE_jxmg1MEG5qPS4t2ZYlGSkLg2_SV9z9Hk-ZlRVxF8cA">
+    </figure>
+
+
+
     <div align = right>
-  <font color="white">ようこそ、さん</font>
+
 <a href="login">(ログインページ)</a>
 </div>
 
   <div>
 
       <div align = center>
-  求人サイト<print><font  color="339999" size="12">HBoy</font></print>
+  求人サイト<print><font  color="339999" size="15">HBoy</font></print>
   <br><br><br>
+<h1><font color="#382b33" size="4"><a href="search">検索ページにいく</a></font><h1><br>
 
-      <a href="search">検索ページにいく</a><br>
-      ↑都道府県から探せるよ♪
+      　　　　　↑都道府県から探せるよ♪
 
       <br><br>
       <div>
-        <h1>案件一覧</h1>
+        <h1 size="5">案件一覧</hidden="">
       <table border=1 >
       <tr>
-      <td>ID</td>
-       <td>タイトル</td>
-       <td style="width:100px">都道府県</td>
-       <td>詳細</td>
+      <td style="width:40px" align=center>ID</td>
+       <td style="width:40px" align=center>タイトル</td>
+       <td style="width:80px" align=center>都道府県</td>
+       <td style="width:40px" align=center>詳細</td>
       </tr>
 
 
@@ -38,9 +42,9 @@
       </tr>
 
       <tr>
-      <td style="width:30px"><%= job.id %></td>
-      <td><a href="/job/=<%= job.id %>"><%= job.title %></td>
-       <td><%= job.name %></td>
+      <td style="width:40px" align=center><%= job.id %></td>
+      <td><a href="/job/<%= job.id %>"><%= job.title %></td>
+       <td style="width:40px" align=center><%= job.name %></td>
        <td><%= job.description %></td>
       </tr>
 <% end %>

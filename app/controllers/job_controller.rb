@@ -3,8 +3,10 @@ class JobController < ApplicationController
 
    @job = Job.first.description
     @area = Area.first.city
-    @jobs = User.find_by(id: params[:id])
+    @jobs = Job.find_by(id: params[:id])
   @JOB = params[:id]
+  @User = User.find_by(id: params[:id])
+
   end
 
       def create

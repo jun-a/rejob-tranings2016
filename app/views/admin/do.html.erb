@@ -2,32 +2,17 @@
 <html>
     <head>
 　<title>CSS | レイアウトの配置</title>
-　　<style>
-#header
-{
-  width:1100px;
-   height:74px;
-   background-color:pink;
 
-}
-#footer{
-   width:700px;
-   height:100px;
-   background-color:pink;
-   clear:both;
-}
-  </style>
     </head>
     <body>
       <div align = right>
-      <font color="white">ようこそ、さん</font>
     <a href="top">(リジョブTOP)</a><br>
         <a href="admin_user_user">(useradmin)</a>
   </div>
       <br>
-  <div color="white" id="header"><h1>会社管理</h1></div><br>
+  <h1><font color="#382b33" size="7">会社管理</font><h1><br>
   <h2>案件一覧</h2>
-     </div>
+
       案件は<%= @jobs.count %>件です
       <div align=right>
       <font color="white">ようこそ、さん</font>
@@ -35,6 +20,7 @@
 
  <table border=1 >
 <tr>
+  <td style="width:40px" align=center>ID</td>
   <td>都道府県</td>
   <td>タイトル</td>
   <td>詳細</td>
@@ -44,11 +30,13 @@
 
 <% Job.all.each do |job| %>
   <tr>
-    <td style="width:100px"><%= job.name %></td>
+    <td style="width:40px" align=center><%=job.id%></td>
+    <td style="width:80px" align=center><%= job.name %></td>
     <td><a href="/job/<%= job.id %>"><%= job.title %></a></td>
     <td><%= job.description %></td>
-    <td><a href="/edit?id=<%= job.id %>">edit</a></td>
-    <td><%=  JobsUser.where(job_id: job.id).count  %><br></td>
+    <td style="width:40px" align=center><a href="/edit?id=<%= job.id %>">edit</a></td>
+    <td style="width:40px" align=center>
+      <%=  JobsUser.where(job_id: job.id).count  %><br></td>
   </tr>
 <% end %>
 
@@ -57,7 +45,7 @@
 
 
 
-
+</div>
 </div>
 </table>
   </body>

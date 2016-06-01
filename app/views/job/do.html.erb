@@ -9,17 +9,83 @@
     <font color="white">ようこそ、さん</font>
     <a href="/top">(TOPに戻る)</a>
     </div>
-<h3>案件詳細ページです。</h3>
 
-<form method="get" action="/jobap">
-    <input name="job_id" type="hidden" value="<%= params[:id] %>" >
-<table>
-<tr>
-<td colspan="2"align=right><input type="submit" value="応募する">
-</td>
-</tr>
-</table>
-</form>
+    <h1>案件詳細ページです。</h1>
+    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS7x7meZBE_jxmg1MEG5qPS4t2ZYlGSkLg2_SV9z9Hk-ZlRVxF8cA">
+    </figure>
+
+
+<h1>ID<%= @jobs.id %><h1><a><%= @jobs.name %></a>
+
+
+  <div class="content" data-job-source="false">
+    <div class="content-head">
+    <ul class="breadcrumb--pt1">
+  </div>
+  <div class="heading1-pt1">
+    <h1 class="heading1-pt1__sub"><%= @jobs.title %>の求人｜求人募集</h1>
+    <h2><%= @jobs.title %></h2>
+  </div>
+
+    <ul class="js-tab-nav js-tab-nav--pt1">
+      <li>
+          <span class="active">募集要項</span>
+      </li>
+
+    </ul>
+  <!-- modal部分 -->
+  <div id="js-recruiting-notice-modal" class="popDiv_id popDiv_id-pt3">
+
+      <div class="t_center m_20">
+        <span class="txt_size_14 mb_10">募集再開通知は、リジョブ会員限定の機能になります。<br>会員登録またはログイン後にキープ一覧から設定をお願いします。</span>
+      </div>
+      <div class="modal_box02 p_20 t_center">
+        <a href="/mypage/registration/new" class="btn btn--pt1 btn--large txt_size_14 w-280px mb_10">無料会員登録</a>
+        <p>すでに会員登録済みの方はこちらから<a href="/mypage/login" target="_blank">ログイン</a></p>
+      </div>
+  </div>
+    <form id="js_add_bookmark_form" action="/job_keep" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="rgLgII0N0Yav7WARpxdoTc67JgIW8UBLf/xD78SKSYgykrNilz0vOLHVCVGjfJqMy+NeK/fuUyOj5wkRwadMOw==">
+      <input type="hidden" value="B3370103" name="job[code]" id="job_code">
+  </form>
+    <form id="js_remove_bookmark_form" action="/job_keep" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="delete"><input type="hidden" name="authenticity_token" value="rgLgII0N0Yav7WARpxdoTc67JgIW8UBLf/xD78SKSYgykrNilz0vOLHVCVGjfJqMy+NeK/fuUyOj5wkRwadMOw==">
+      <input type="hidden" value="B3370103" name="job[code]" id="job_code">
+  </form>
+
+    <section class="job-data">
+      <div class="job-data__main">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/rejob-v2-images-production/files/client_shop_image/3LXZIN/p4m3Jt/r4zXYx/z2a_wJ/69Q/shop_album.jpg?1458010686">
+
+
+
+
+
+
+        <section>
+          <table class="table table-set--jobdata">
+            <colgroup>
+              <col style="width: 140px;">
+            </colgroup>
+            <tbody>
+                <tr>
+
+                  <%= @jobs.description %>
+                  <td>
+                    <ul class="ul-inline ul-inline--cut-pt2">
+                      <li>
+
+  <div class="js_fixed_bar js_bookmark_area">
+      <form method="get" action="/entry?id=<%= @User.id %>">
+          <input name="job_id" type="hidden"　 value="<%= params[:id] %>" >
+
+      <table>
+      <tr>
+      <td colspan="2"align=right><input type="submit"　 value="応募する"　class="btn btn--pt3 btn--entry01 btn--kantan w-block" rel="nofollow"> WEB応募する　>
+      </td>
+      </tr>
+      </table>
+      </form>
+
+  </div>
 
   </body>
 </html>

@@ -3,33 +3,68 @@
   <head>
     <meta charset="utf-8">
     <title>mypage</title>
+    <div align = right>
+        <h1>ようこそ<%= @job.name %>さん</h1>
+      </div>
   </head>
   <body>
-    <div align = right>
 
-      ようこそ<a><%= @current_user %></a><br>
+        <div>
+          <font color="3333999" size="6">マイページ </font>
+        </div>
+
+        <div align = right>
+      <p> <a href="logout">ログアウト</a> </p>
      <a href="admin">(Adminトップ)</a>
 </div>
-    <div>
-      <font color="3333999" size="6">マイページ </font>
-    </div>
-
-    <table border=1>
-        <tr>
-応募数
-  <%= @jobap.count %>
-社<br>
-  <%= @jobap.pluck(:id) %>
-
-  <td>ID</td>
-
-<td>会社名</td>
-
-<td>日付</td>
-</tr>
-      </table>
 
 
+
+
+
+
+    <section class="job-data">
+        <div class="job-data__main" style="height: 1336px;">
+          <section>
+            <table class="table table-set--jobdata">
+              <colgroup>
+                <col style="width: 140px;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>名前（カナ）</th>
+                  <td>
+                    <p><%= @job.name %> (<%= @job.name_kana %>)</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>年齢</th>
+                  <td>
+                    <p><%= @job.age %></p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>性別</th>
+                  <td>
+                    <p><%= @job.sex %></p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>応募数</th>
+                  <td>
+                    <p>応募数
+                      <%= @jobap.count %>
+                    社<br>
+    <br>
+    <br>  <%= @jobap.pluck(:id) %></p>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
 
   </body>
 </html>
